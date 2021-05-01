@@ -52,14 +52,10 @@ static void transition_handling_task(void *_)
         switch (state_change)
         {
         case INNER_BARRIER_FLAG:
-        	if(count == MAX_ROOM_COUNT) //avoid overflow
-        		break;
-            count++;
+            count = (count < MAX_ROOM_COUNT) ? count + 1 : count;
             break;
         case OUTER_BARRIER_FLAG:
-        	if(count == MIN_ROOM_COUNT) //avoid overflow
-        		break;
-            count--;
+            count = (count > MIN_ROOM_COUNT) ? count - 1 : count;
             break;
         default:
             break;
