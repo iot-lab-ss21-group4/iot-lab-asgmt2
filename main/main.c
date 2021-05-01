@@ -15,6 +15,6 @@ void app_main(void)
     {
         loop_oled();
         loop_transitions();
-        vTaskDelay(100 / portTICK_PERIOD_MS);
+        vTaskDelay(1000 / portTICK_PERIOD_MS);
     }
 }

@@ -6,7 +6,8 @@
   ],
   "files.associations": {
     "*.inc": "c",
-    "common.h": "c"
+    "common.h": "c",
+    "complex": "c"
   },
   // "idf.flashType": "JTAG",
 }

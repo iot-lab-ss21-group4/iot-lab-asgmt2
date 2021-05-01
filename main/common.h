@@ -1,10 +1,12 @@
 #ifndef COMMON_H
 #define COMMON_H
 
+#include <stdbool.h>
 #include <stdio.h>
 #include <stdint.h>
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
+#include "freertos/timers.h"
 #include "freertos/queue.h"
 #include "driver/gpio.h"
 #include "sdkconfig.h"
@@ -12,16 +14,18 @@
 
 #define BYTE_TO_BINARY_PATTERN "%c%c%c%c%c%c%c%c"
 #define BYTE_TO_BINARY(byte)       \
-    (byte & 0x80 ? '1' : '0'),     \
-        (byte & 0x40 ? '1' : '0'), \
-        (byte & 0x20 ? '1' : '0'), \
-        (byte & 0x10 ? '1' : '0'), \
-        (byte & 0x08 ? '1' : '0'), \
-        (byte & 0x04 ? '1' : '0'), \
-        (byte & 0x02 ? '1' : '0'), \
-        (byte & 0x01 ? '1' : '0')
+    ((byte)&0x80 ? '1' : '0'),     \
+        ((byte)&0x40 ? '1' : '0'), \
+        ((byte)&0x20 ? '1' : '0'), \
+        ((byte)&0x10 ? '1' : '0'), \
+        ((byte)&0x08 ? '1' : '0'), \
+        ((byte)&0x04 ? '1' : '0'), \
+        ((byte)&0x02 ? '1' : '0'), \
+        ((byte)&0x01 ? '1' : '0')
 #define FIRST_N_BITMASK(n) ((1 << n) - 1)
 #define POWER_OF_TWO(x) (1 << (x))
+#define MAX(a, b) (((a) > (b)) ? (a) : (b))
+#define LOGICAL_NOT(c) ((c) ? false : true)
 
 typedef uint8_t count_display_q_item;
 
