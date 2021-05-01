@@ -2,6 +2,11 @@
   "C_Cpp.intelliSenseEngine": "Tag Parser",
   "idf.portWin": "COM5",
   "idf.openOcdConfigs": [
-    "boards/esp32-wrover-kit-3.3v.cfg"
-  ]
+    "board/esp32-wrover-kit-3.3v.cfg"
+  ],
+  "files.associations": {
+    "*.inc": "c",
+    "common.h": "c"
+  },
+  // "idf.flashType": "JTAG",
 }
