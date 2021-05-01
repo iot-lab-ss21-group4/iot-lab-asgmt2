@@ -21,6 +21,7 @@
         (byte & 0x02 ? '1' : '0'), \
         (byte & 0x01 ? '1' : '0')
 #define FIRST_N_BITMASK(n) ((1 << n) - 1)
+#define POWER_OF_TWO(x) (1 << (x))
 
 typedef uint8_t count_display_q_item;
 

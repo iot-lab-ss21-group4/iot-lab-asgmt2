@@ -7,9 +7,10 @@
 #define INNER_BARRIER_PIN CONFIG_INNER_BARRIER_PIN
 #define OUTER_BARRIER_PIN CONFIG_OUTER_BARRIER_PIN
 #define ESP_INTR_FLAG_DEFAULT 0
-#define POWER_OF_TWO(x) (1 << (x))
+// minimum count of people in the room
 #define MIN_ROOM_COUNT 0
-#define MAX_ROOM_COUNT POWER_OF_TWO((sizeof((count))*8)) - 1
+// assuming that count_display_q_item is an unsigned type
+#define MAX_ROOM_COUNT ((count_display_q_item)(-1))
 
 typedef uint8_t barrier_evt_q_item;
 
