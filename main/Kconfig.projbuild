@@ -1,0 +1,31 @@
+menu "Example Configuration"
+
+    config BLINK_GPIO
+        int "Blink GPIO number"
+        range 0 34
+        default 19
+        help
+            GPIO number (IOxx) to blink on and off.
+
+            Some GPIOs are used for other purposes (flash connections, etc.) and cannot be used to blink.
+
+            GPIOs 35-39 are input-only so cannot be used as outputs.
+
+    config BLINK_ON_LENGTH_MS
+        int "Blink on period for the BLINK_GPIO pin"
+        range 1 4294967295
+        default 100
+        help
+            The duration of on time for blinking.
+
+            The blinking is taking place on pin specified by config BLINK_GPIO.
+
+    config BLINK_OFF_LENGTH_MS
+        int "Blink off period for the BLINK_GPIO pin"
+        range 1 4294967295
+        default 100
+        help
+            The duration of off time for blinking.
+
+            The blinking is taking place on pin specified by config BLINK_GPIO.
+endmenu
