@@ -2,6 +2,6 @@
 #define OLED_H
 
 void setup_oled();
-void showRoomState();
+void loop_oled();
 
 #endif
