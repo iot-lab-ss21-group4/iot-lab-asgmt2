@@ -4,8 +4,8 @@
 #define FLAG_COUNT 2 // number of barrier bits (flags)
 #define INNER_BARRIER_FLAG (1 << 0)
 #define OUTER_BARRIER_FLAG (1 << 1)
-#define INNER_BARRIER_PIN 5
-#define OUTER_BARRIER_PIN 26
+#define INNER_BARRIER_PIN CONFIG_INNER_BARRIER_PIN
+#define OUTER_BARRIER_PIN CONFIG_OUTER_BARRIER_PIN
 #define ESP_INTR_FLAG_DEFAULT 0
 
 typedef uint8_t barrier_evt_q_item;
@@ -67,7 +67,6 @@ void setup_transitions()
         barrier_evt_q = xQueueCreate(BARRIER_EVT_Q_SIZE, sizeof(barrier_evt_q_item));
     }
 
-    //TODO: Use project configuration i.e. gpio_set_direction(GPIO_NUM_19, GPIO_MODE_INPUT)
     gpio_set_direction(OUTER_BARRIER_PIN, GPIO_MODE_INPUT);
     gpio_set_direction(INNER_BARRIER_PIN, GPIO_MODE_INPUT);
 

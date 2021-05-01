@@ -14,13 +14,6 @@ static void showRoomState()
     ssd1306_clearScreen();
     snprintf(CHAR_BUFFER, CHAR_BUFFER_SIZE, "Count: %d", count);
     ssd1306_printFixedN(0, 0, CHAR_BUFFER, STYLE_NORMAL, 1);
-    // TODO: can be removed later, just to remember here possible calls
-    //    ssd1306_printFixedN(0, 0, "Normal text", STYLE_NORMAL, 1);
-    //    ssd1306_printFixed(0, 16, "Bold text", STYLE_BOLD);
-    //    ssd1306_printFixed(0, 24, "Italic text", STYLE_ITALIC);
-    //    ssd1306_negativeMode();
-    //    ssd1306_printFixed(0, 32, "Inverted bold", STYLE_BOLD);
-    //    ssd1306_positiveMode();
 }
 
 static void oled_update_task(void *_)
