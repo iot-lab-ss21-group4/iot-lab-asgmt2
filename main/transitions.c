@@ -12,7 +12,7 @@ typedef uint8_t barrier_evt_q_item;
 
 static barrier_evt_q_item FSM_STATE = 0;
 static const uint16_t BARRIER_EVT_Q_SIZE = 16;
-xQueueHandle barrier_evt_q = NULL;
+static xQueueHandle barrier_evt_q = NULL;
 
 static void apply_state_change(barrier_evt_q_item);
 static void transition_handling_task(void *);
