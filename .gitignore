@@ -87,3 +87,8 @@ CMakeUserPresets.json
 # End of https://www.toptal.com/developers/gitignore/api/cmake,vscode,c
 
 .DS_Store
+
+# eclipse setting
+.settings
+.project
+.cproject
