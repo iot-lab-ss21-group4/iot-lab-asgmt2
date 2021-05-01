@@ -52,10 +52,7 @@ static void transition_handling_task(void *_)
             count++;
             break;
         case OUTER_BARRIER_FLAG:
-        	if(count == 0) //consider overflow
-        		break;
-            count--;
-            break;
+            count = (count > 0) ? count - 1 : count;
         default:
             break;
         }
