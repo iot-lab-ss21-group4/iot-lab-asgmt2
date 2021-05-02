@@ -26,6 +26,7 @@
 #define POWER_OF_TWO(x) (1 << (x))
 #define MAX(a, b) (((a) > (b)) ? (a) : (b))
 #define LOGICAL_NOT(c) ((c) ? false : true)
+#define STATIC_ASSERT(COND, MSG) typedef char static_assertion_##MSG[(COND) ? 1 : -1]
 
 typedef uint8_t count_display_q_item;
 
