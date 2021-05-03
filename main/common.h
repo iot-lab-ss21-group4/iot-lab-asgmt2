@@ -35,6 +35,7 @@ extern volatile uint8_t count;
 extern const uint16_t COUNT_DISPLAY_Q_SIZE;
 extern xQueueHandle count_display_q;
 
+void init_logging();
 void init_common_queues();
 
 #endif

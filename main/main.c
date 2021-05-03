@@ -4,8 +4,7 @@
 
 void app_main(void)
 {
-    esp_log_level_set(TAG, ESP_LOG_INFO);
-    ESP_LOGI(TAG, "Start");
+    init_logging();
     init_common_queues();
 
     setup_oled();
